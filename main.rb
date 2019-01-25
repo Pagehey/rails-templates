@@ -118,10 +118,9 @@ RUBY
 
 # DEFAULT_LOCALE
 ########################################
-  application do <<-EOF
-    config.i18n.default_locale = :fr
-EOF
-  end
+application do
+  config.i18n.default_locale = :fr
+end
 
 environment generators
 
