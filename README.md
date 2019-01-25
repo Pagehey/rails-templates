@@ -7,6 +7,7 @@ Diff from original template by lewagon :
 - yarn add Bootstrap@4.2.1
 - gem 'slim-rails'
 - gem 'devise-i18n'
+- default_locale = :fr
 
 ```
 rails new \
