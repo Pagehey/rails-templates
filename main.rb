@@ -116,6 +116,13 @@ config.generators do |generate|
     end
 RUBY
 
+# DEFAULT_LOCALE
+########################################
+  application do <<-EOF
+    config.i18n.default_locale = :fr
+EOF
+  end
+
 environment generators
 
 ########################################
