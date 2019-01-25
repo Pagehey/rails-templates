@@ -53,7 +53,7 @@ YAML
 run 'rm -rf app/assets/stylesheets'
 run 'rm -rf vendor'
 run 'curl -L https://github.com/Pagehey/rails-templates/raw/master/master.zip > stylesheets.zip'
-run 'unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets'
+run 'unzip stylesheets.zip -d app/assets && rm stylesheets.zip && rm -rf app/assets/__MACOSX && mv app/assets/rails-stylesheets-master app/assets/stylesheets'
 
 run 'rm app/assets/javascripts/application.js'
 file 'app/assets/javascripts/application.js', <<-JS
@@ -78,16 +78,15 @@ html
     = csrf_meta_tags
     = action_cable_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
-    = stylesheet_pack_tag 'application', media: 'all'
+    /= stylesheet_pack_tag 'application', media: 'all'
   body
-    = render 'shared/navbar'
     = render 'shared/flashes'
-    = yield %>
+    = yield
     = javascript_include_tag 'application'
     = javascript_pack_tag 'application'
 SLIM
 
-file 'app/views/shared/_flashes.html.erb', <<-SLIM
+file 'app/views/shared/_flashes.html.slim', <<-SLIM
 - if notice
   .alert.alert-info.alert-dismissible role="alert"
     button.close type="button" data-dismiss="alert" aria-label="Close"
@@ -194,7 +193,7 @@ RUBY
   # Webpacker / Yarn
   ########################################
   run 'rm app/javascript/packs/application.js'
-  run 'yarn add jquery bootstrap@4.2.1'
+  run 'yarn add jquery bootstrap@4.2.1 popper.js'
   file 'app/javascript/packs/application.js', <<-JS
 import "bootstrap";
 JS
@@ -204,7 +203,8 @@ JS
 const webpack = require('webpack')
 environment.plugins.prepend('Provide',
   new webpack.ProvidePlugin({
-    jQuery: 'jquery'
+    $: 'jquery',
+    jQuery: 'jquery',
   })
 )
 
