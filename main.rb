@@ -52,7 +52,7 @@ YAML
 ########################################
 run 'rm -rf app/assets/stylesheets'
 run 'rm -rf vendor'
-run 'curl -L https://github.com/Pagehey/rails-templates/blob/master/master.zip > stylesheets.zip'
+run 'curl -L https://github.com/Pagehey/rails-templates/raw/master/master.zip > stylesheets.zip'
 run 'unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets'
 
 run 'rm app/assets/javascripts/application.js'
@@ -172,7 +172,7 @@ RUBY
   # migrate + devise views
   ########################################
   rails_command 'db:migrate'
-  generate('devise:views')
+  generate('devise:i18n:views')
 
   # Pages Controller
   ########################################
