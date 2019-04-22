@@ -22,6 +22,6 @@ rails new \
 rails new \
   --database postgresql \
   --webpack \
-  -m https://raw.githubusercontent.com/Pagehey/rails-templates/clever_cloud/master/devise.rb \
+  -m https://raw.githubusercontent.com/Pagehey/rails-templates/master/clever_cloud/devise.rb \
   APP_NAME
   ```
