@@ -154,6 +154,7 @@ RUBY
 ########################################
   application do <<-EOF
     config.i18n.default_locale = :fr
+    config.i18n.fallbacks = [:en]
 EOF
   end
 
