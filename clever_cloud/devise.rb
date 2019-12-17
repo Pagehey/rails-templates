@@ -88,12 +88,6 @@ run 'rm -rf vendor'
 run 'curl -L https://github.com/Pagehey/rails-stylesheets/archive/master.zip > stylesheets.zip'
 run 'unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets'
 
-run 'rm app/assets/javascripts/application.js'
-file 'app/assets/javascripts/application.js', <<-JS
-//= require rails-ujs
-//= require_tree .
-JS
-
 # Dev environment
 ########################################
 gsub_file('config/environments/development.rb', /config\.assets\.debug.*/, 'config.assets.debug = false')
