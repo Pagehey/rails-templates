@@ -16,7 +16,6 @@ gem 'rails', '#{Rails.version}'
 gem 'redis'
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
@@ -236,7 +235,7 @@ RUBY
   # Webpacker / Yarn
   ########################################
   run 'rm app/javascript/packs/application.js'
-  run 'yarn add jquery bootstrap@4.2.1 popper.js'
+  run 'yarn add jquery bootstrap popper.js'
   file 'app/javascript/packs/application.js', <<-JS
 import "bootstrap";
 JS
