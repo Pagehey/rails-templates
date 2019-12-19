@@ -109,7 +109,6 @@ html
   body
     = render 'shared/flashes'
     = yield
-    = javascript_include_tag 'application'
     = javascript_pack_tag 'application'
 SLIM
 
